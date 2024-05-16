@@ -291,3 +291,8 @@ a{
     background-color: var(--button-hover-color);
 
 }
+
+.card{
+    background-color: var(--gris);
+    border: 1px solid var(--border-color);
+}
