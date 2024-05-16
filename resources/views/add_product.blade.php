@@ -2,22 +2,22 @@
 <html>
 <head>
     <title>Añadir Producto</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ route('home') }}"><h1>TIENDA SENATI</h1></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ route('home') }}">TIENDA SENATI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.index') }}">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Añadir Producto</a>
+                    <a class="nav-link" href="{{ route('products.create') }}">Añadir Producto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.showAll') }}">Eliminar Producto</a>
@@ -25,14 +25,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.search') }}">Buscar Producto</a>
                 </li>
+                <li class="nav-item">
+                    <form method="POST" action="{{ route('logout') }}" class="form-inline my-2 my-lg-0">
+                        @csrf
+                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+                    </form>
+                </li>
             </ul>
-            <form method="POST" action="{{ route('logout') }}" class="form-inline my-2 my-lg-0">
-                @csrf
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar Sesión</button>
-            </form>
         </div>
     </nav>
+    
     <div class="container mt-5">
+        <div class="caja">
         <h1>Añadir Producto</h1>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -75,5 +79,6 @@
 @endif
         </form>
     </div>
+</div>
 </body>
 </html>

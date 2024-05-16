@@ -244,3 +244,50 @@ a{
     border-radius: 0.2cm;
     border: 1px solid var(--border-color);
 }
+
+/*ESTILO ADD_PRODUCT*/
+.caja{
+    color: var(--text-light-gray);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: var(--gris);
+    border-radius: 0.2cm;
+    border: 1px solid var(--border-color);
+}
+.form-control{
+    background-color: var(--gris);
+    border: 1px solid var(--border-color);
+}
+.btn-primary{
+    height: 45px;
+    width: 25%;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    user-select: none;
+    background: linear-gradient(to right, var(--gondola), var(--red));
+    border: none;
+    color: var(--text-white);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn-primary::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    z-index: -1;
+}
+.btn-primary:hover::before{
+    background-color: var(--button-hover-color);
+
+}
